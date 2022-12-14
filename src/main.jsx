@@ -1,10 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+// import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.createRoot(document.getElementById('approot')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+import App from './App';
+import './styles/index.scss';
+
+const container = document.getElementById('approot');
+const root = createRoot(container);
+
+const AppWrapper = () => {
+  return (
+    // <BrowserRouter>
+      <App />
+    // </BrowserRouter>
+  );
+};
+
+root.render(<AppWrapper />);
+
+// root.render(<AppWrapper tab="Home" />);
